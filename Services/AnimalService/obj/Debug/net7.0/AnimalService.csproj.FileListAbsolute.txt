@@ -1,0 +1,6 @@
+/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/AnimalService/obj/Debug/net7.0/AnimalService.csproj.AssemblyReference.cache
+/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/AnimalService/obj/Debug/net7.0/AnimalService.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/AnimalService/obj/Debug/net7.0/AnimalService.AssemblyInfoInputs.cache
+/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/AnimalService/obj/Debug/net7.0/AnimalService.AssemblyInfo.cs
+/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/AnimalService/obj/Debug/net7.0/AnimalService.csproj.CoreCompileInputs.cache
+/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/AnimalService/obj/Debug/net7.0/AnimalService.MvcApplicationPartsAssemblyInfo.cache
