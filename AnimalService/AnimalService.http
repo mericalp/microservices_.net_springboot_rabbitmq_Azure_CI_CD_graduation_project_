@@ -1,6 +1,0 @@
-@AnimalService_HostAddress = http://localhost:5157
-
-GET {{AnimalService_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
