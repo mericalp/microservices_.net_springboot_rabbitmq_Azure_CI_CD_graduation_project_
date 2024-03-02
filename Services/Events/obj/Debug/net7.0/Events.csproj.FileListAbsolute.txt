@@ -1,0 +1,11 @@
+/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/bin/Debug/net7.0/Events.deps.json
+/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/bin/Debug/net7.0/Events.dll
+/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/bin/Debug/net7.0/Events.pdb
+/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/obj/Debug/net7.0/Events.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/obj/Debug/net7.0/Events.AssemblyInfoInputs.cache
+/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/obj/Debug/net7.0/Events.AssemblyInfo.cs
+/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/obj/Debug/net7.0/Events.csproj.CoreCompileInputs.cache
+/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/obj/Debug/net7.0/Events.dll
+/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/obj/Debug/net7.0/refint/Events.dll
+/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/obj/Debug/net7.0/Events.pdb
+/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/obj/Debug/net7.0/ref/Events.dll
