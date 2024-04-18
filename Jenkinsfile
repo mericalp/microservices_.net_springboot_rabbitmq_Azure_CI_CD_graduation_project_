@@ -6,12 +6,11 @@ pipeline {
         DOCKER_IMAGE = 'mericalpp/animal_service'
         DOCKER_CREDENTIALS_ID = 'dockerhub_mericalpp'
         // Specify the directory where your Dockerfile is located
-        DIRECTORY = 'Services/Dockerfile'
+        DIRECTORY = 'Services'
     }
     stages {
         stage('Build Docker Image') {
             steps {
-                // Change to the directory containing the Dockerfile
                 dir("${DIRECTORY}") {
                     script {
                         // Build the Docker image and tag it with the build number
