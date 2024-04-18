@@ -1,20 +1,17 @@
-
 pipeline {
     agent any
     environment {
-        // Define the Docker image name and the Docker Hub credentials ID
         DOCKER_IMAGE = 'mericalpp/animal_service'
         DOCKER_CREDENTIALS_ID = 'dockerhub_mericalpp'
-        // Specify the directory where your Dockerfile is located
-        DIRECTORY = 'Services'
+        DIRECTORY = 'Services'  // Make sure this path is correct and relative to where the Jenkinsfile is located.
     }
     stages {
         stage('Build Docker Image') {
             steps {
                 dir("${DIRECTORY}") {
                     script {
-                        // Build the Docker image and tag it with the build number
-                        docker.build("${DOCKER_IMAGE}:${env.BUILD_NUMBER}")
+                        // Build the Docker image using shell commands
+                        sh "docker build -t ${DOCKER_IMAGE}:${env.BUILD_NUMBER} ."
                     }
                 }
             }
@@ -22,9 +19,9 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    docker.withRegistry('https://index.docker.io/v1/', "${DOCKER_CREDENTIALS_ID}") {
-                        docker.image("${DOCKER_IMAGE}:${env.BUILD_NUMBER}").push()
-                    }
+                    // Push the Docker image using shell commands
+                    sh "echo $DOCKER_HUB_PASSWORD | docker login --username $DOCKER_HUB_USERNAME --password-stdin"
+                    sh "docker push ${DOCKER_IMAGE}:${env.BUILD_NUMBER}"
                 }
             }
         }
@@ -32,8 +29,8 @@ pipeline {
     post {
         always {
             script {
-                // Optionally remove the Docker image to clean up the Jenkins agent
-                docker.image("${DOCKER_IMAGE}:${env.BUILD_NUMBER}").remove()
+                // Remove the Docker image to clean up space
+                sh "docker rmi ${DOCKER_IMAGE}:${env.BUILD_NUMBER}"
             }
         }
     }
