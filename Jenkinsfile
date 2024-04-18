@@ -4,7 +4,6 @@ pipeline {
         DOCKER_IMAGE = 'mericalpp/animal_service'
         DOCKER_CREDENTIALS_ID = 'dockerhub_mericalpp'
         DIRECTORY = 'Services'
-        DOCKER_HUB_TOKEN = credentials('dockerhub_mericalpp')
     }
     stages {
         stage('Build Docker Image') {
@@ -19,9 +18,11 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    // Log in to Docker Hub using the access token
-                    sh "echo $DOCKER_HUB_TOKEN | docker login --username $DOCKER_HUB_USERNAME --password-stdin"
-                    sh "docker push ${DOCKER_IMAGE}:${env.BUILD_NUMBER}"
+                    // Log in to Docker Hub using stored credentials
+                    withCredentials([usernamePassword(credentialsId: 'dockerhub_mericalpp', passwordVariable: 'DOCKER_HUB_PASSWORD', usernameVariable: 'DOCKER_HUB_USERNAME')]) {
+                        sh "echo $DOCKER_HUB_PASSWORD | docker login --username $DOCKER_HUB_USERNAME --password-stdin"
+                        sh "docker push ${DOCKER_IMAGE}:${env.BUILD_NUMBER}"
+                    }
                 }
             }
         }
