@@ -6,7 +6,7 @@ pipeline {
         DOCKER_IMAGE = 'mericalpp/animal_service'
         DOCKER_CREDENTIALS_ID = 'dockerhub_mericalpp'
         // Specify the directory where your Dockerfile is located
-        DIRECTORY = 'path/to/your/dockerfile'
+        DIRECTORY = 'Services/Dockerfile'
     }
     stages {
         stage('Build Docker Image') {
