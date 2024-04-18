@@ -1,5 +1,4 @@
 
-Copy code
 pipeline {
     agent any
     environment {
