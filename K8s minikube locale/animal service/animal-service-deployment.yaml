@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: animal-service
+spec:
+  selector:
+    matchLabels:
+      app: animal-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: animal-service
+    spec:
+      containers:
+      - name: animal-service
+        image: mericalpp/animal_service:latest  # Update the tag as needed
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: animal-service
+spec:
+  selector:
+    app: animal-service
+  ports:
+  - port: 80
+    targetPort: 80
+  type: NodePort
