@@ -4,7 +4,7 @@ pipeline {
         DOCKER_IMAGE = 'mericalpp/animal_service'
         DOCKER_CREDENTIALS_ID = 'dockerhub_mericalpp'
         DIRECTORY = 'Services'
-        KUBE_CONFIG = '/Users/mericalp/.kube/config' // Minikube kubeconfig path
+        KUBE_CONFIG = '/root/.kube/config'
         K8S_DIR = 'k8s/animal_service' // Kubernetes files directory
     }
     stages {
