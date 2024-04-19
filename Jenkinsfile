@@ -27,9 +27,7 @@ pipeline {
                 }
             }
         }
-    }
-
-     stage('Update Kubernetes Deployment') {
+        stage('Update Kubernetes Deployment') {
             steps {
                 dir("${K8S_DIR}") {
                     script {
@@ -39,6 +37,9 @@ pipeline {
                 }
             }
         }
+    }
+
+     
     post {
         always {
             script {
