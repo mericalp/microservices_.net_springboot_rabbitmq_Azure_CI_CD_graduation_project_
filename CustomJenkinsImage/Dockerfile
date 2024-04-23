@@ -26,6 +26,10 @@ RUN echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.g
 RUN apt-get update -qq && apt-cache madison docker-ce docker-ce-cli containerd.io
 RUN apt-get install -qqy docker-ce docker-ce-cli containerd.io || echo "Docker packages not found, skipping installation."
 
+# kubectl
+RUN curl -L https://storage.googleapis.com/kubernetes-release/release/${KUBE_LATEST_VERSION}/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl \
+    chmod +x /usr/local/bin/kubectl 
+
 # Manually create Docker group and add Jenkins user to it if the installation of Docker was skipped
 RUN getent group docker || groupadd docker
 RUN usermod -aG docker jenkins

@@ -4,7 +4,7 @@ pipeline {
         DOCKER_IMAGE = 'mericalpp/animal_service'
         DOCKER_CREDENTIALS_ID = 'dockerhub_mericalpp'
         DIRECTORY = 'Services'
-        KUBE_CONFIG = '/home/jenkins/.kube/config'
+        KUBE_CONFIG = '/root/.kube/config'
         K8S_DIR = 'k8s/animal_service' // Kubernetes files directory
     }
     stages {
@@ -13,8 +13,8 @@ pipeline {
                 dir("${DIRECTORY}") {
                     script {
                         sh "docker build -t ${DOCKER_IMAGE}:${env.BUILD_NUMBER} ."
-                    }
-                }
+                    } 
+                } 
             }
         }
         stage('Push Docker Image') {
