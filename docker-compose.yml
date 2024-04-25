@@ -9,7 +9,6 @@ services:
       - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=RescueUs_Animals;User Id=SA;Password=Password123;MultipleActiveResultSets=True;TrustServerCertificate=True;
       - Logging__LogLevel__Default=Information
       - Logging__LogLevel__Microsoft.AspNetCore=Information
-      - RabbitMq__Host=rabbitmq
       - ASPNETCORE_URLS=http://+:7001
     depends_on:
       - sqlserver
@@ -18,15 +17,21 @@ services:
       - app_network
 
   search-service:
-    image: mericalpp/search_service:lts
+    image: mericalpp/search_service:lts  
     ports:
       - "8080:8080" 
     environment:
-      SPRING_DATA_MONGODB_URI: mongodb://mongodb_container:27017/SearchDb
-      SPRING_RABBITMQ_HOST: rabbitmq
-      SPRING_RABBITMQ_PORT: 5672
-      SPRING_RABBITMQ_USERNAME: guest
-      SPRING_RABBITMQ_PASSWORD: guest
+      CORS_ORIGIN: "http://localhost:3000"
+      SPRING_DATA_MONGODB_DATABASE: "SearchDb"
+      SPRING_DATA_MONGODB_URI: "mongodb://mongodb_container:27017/SearchDb"
+      SPRING_RABBITMQ_HOST: "rabbitmq"
+      SPRING_RABBITMQ_PORT: "5672"
+      SPRING_RABBITMQ_USERNAME: "guest"
+      SPRING_RABBITMQ_PASSWORD: "guest"
+      LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_AMQP: "DEBUG"
+      SPRING_JPA_PROPERTIES_HIBERNATE_SHOW_SQL: "true"
+      SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL: "true"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
 
     depends_on:
       - mongodb_container
@@ -35,7 +40,7 @@ services:
       - app_network
 
   react-app:
-    image: mericalpp/ui_animal_app:latest  
+    image: mericalpp/ui_animal_app:lts  
     ports:
       - "3000:3000"  
     depends_on:
@@ -47,8 +52,10 @@ services:
   sqlserver:
     image: mcr.microsoft.com/azure-sql-edge
     environment:
-      ACCEPT_EULA: "Y"
-      SA_PASSWORD: "Password123"
+      ACCEPT_EULA: "1"
+      MSSQL_USER: "SA"
+      MSSQL_SA_PASSWORD: "Password123"
+      MSSQL_PID: "Developer"
     ports:
       - "1433:1433"
     networks:

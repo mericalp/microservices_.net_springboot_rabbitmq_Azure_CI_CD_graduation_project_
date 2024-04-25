@@ -14,7 +14,7 @@ export const axiosGet = (url) =>{
 export const axiosPost = (url, data) => {
     return axios.post(`${baseURL}${url}`, data, {
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "multipart/form-data;"
         }
     })
 }
@@ -28,7 +28,7 @@ export const axiosDelete = (url) =>{
 export const axiosPut = (url, data) =>{
     return axios.put(`${baseURL}${url}`, data,{
         headers:{
-            "Content-Type": "application/json"
+            "Content-Type": "multipart/form-data;"
         }
     })
 }

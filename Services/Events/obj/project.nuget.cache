@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5/kaxuTTOj8nsF5fH+jg4ouNLYB1Xe2CMje3XpBJRfWkJ4tnMsG4CkY2oQMFoC0wjEp0cNglZNXa9YRSaOE2MA==",
+  "dgSpecHash": "G9QhYLvV7EXiLuxsHwfKI9XIscJ34Qi3DJ3dsPY0Fxx6i85O96ousnr6IEr3j8XTvH/z8rrhKvp8eMCJ9xJ+1g==",
   "success": true,
-  "projectFilePath": "/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/Events.csproj",
+  "projectFilePath": "/Users/mericalp/Documents/GitHub/microservices/Services/Events/Events.csproj",
   "expectedPackageFiles": [
     "/Users/mericalp/.nuget/packages/microsoft.netcore.app.ref/7.0.16/microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
     "/Users/mericalp/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.16/microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"

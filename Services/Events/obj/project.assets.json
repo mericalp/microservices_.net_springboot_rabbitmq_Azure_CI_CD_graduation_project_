@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/Events.csproj",
+      "projectUniqueName": "/Users/mericalp/Documents/GitHub/microservices/Services/Events/Events.csproj",
       "projectName": "Events",
-      "projectPath": "/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/Events.csproj",
+      "projectPath": "/Users/mericalp/Documents/GitHub/microservices/Services/Events/Events.csproj",
       "packagesPath": "/Users/mericalp/.nuget/packages/",
-      "outputPath": "/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/obj/",
+      "outputPath": "/Users/mericalp/Documents/GitHub/microservices/Services/Events/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/mericalp/.nuget/NuGet/NuGet.Config"

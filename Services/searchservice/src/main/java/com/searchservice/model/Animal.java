@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
 import lombok.Data;
 
-// @Data
+@Data
 @Document(collection = "animal")
 public class Animal {
     @Id

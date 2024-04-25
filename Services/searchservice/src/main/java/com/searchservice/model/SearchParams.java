@@ -4,7 +4,9 @@ package com.searchservice.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
+import lombok.Data;
 
+@Data
 public class SearchParams {
     private String searchTerm;
     private int pageNumber = 1;
@@ -14,7 +16,7 @@ public class SearchParams {
     private String orderBy;
     private String filterBy;
 
-    // Getter and setter methods
+
 
     public String getSearchTerm() {
         return searchTerm;

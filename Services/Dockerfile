@@ -21,4 +21,5 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build-env /app/AnimalService/out /app
+ENV ASPNETCORE_URLS=http://+:7001
 ENTRYPOINT ["dotnet", "AnimalService.dll"]

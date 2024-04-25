@@ -55,119 +55,119 @@ public class AnimalCreated {
     @JsonProperty("updatedAt")
     private String updatedAt;
 
-    //  @Override
-    // public String toString() {
-    //     return "AnimalCreated{" +
-    //             "id='" + id + '\'' +
-    //             ", publicId=" + publicId +
-    //             ", age=" + age +
-    //             ", name='" + name + '\'' +
-    //             ", type='" + type + '\'' +
-    //             ", breed='" + breed + '\'' +
-    //             ", sex='" + sex + '\'' +
-    //             ", weight=" + weight +
-    //             ", color='" + color + '\'' +
-    //             ", description='" + description + '\'' +
-    //             ", coverImageUrl='" + coverImageUrl + '\'' +
-    //             ", status='" + status + '\'' +
-    //             '}';
-    // }
-    // // Getter ve setter metodları
-    // public String getId() {
-    //     return id;
-    // }
+     @Override
+    public String toString() {
+        return "AnimalCreated{" +
+                "id='" + id + '\'' +
+                ", publicId=" + publicId +
+                ", age=" + age +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", breed='" + breed + '\'' +
+                ", sex='" + sex + '\'' +
+                ", weight=" + weight +
+                ", color='" + color + '\'' +
+                ", description='" + description + '\'' +
+                ", coverImageUrl='" + coverImageUrl + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
+    // Getter ve setter metodları
+    public String getId() {
+        return id;
+    }
 
-    // public void setId(String id) {
-    //     this.id = id;
-    // }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-    // public int getPublicId() {
-    //     return publicId;
-    // }
+    public int getPublicId() {
+        return publicId;
+    }
 
-    // public void setPublicId(int publicId) {
-    //     this.publicId = publicId;
-    // }
+    public void setPublicId(int publicId) {
+        this.publicId = publicId;
+    }
 
-    // public int getAge() {
-    //     return age;
-    // }
+    public int getAge() {
+        return age;
+    }
 
-    // public void setAge(int age) {
-    //     this.age = age;
-    // }
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-    // public String getName() {
-    //     return name;
-    // }
+    public String getName() {
+        return name;
+    }
 
-    // public void setName(String name) {
-    //     this.name = name;
-    // }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    // public String getType() {
-    //     return type;
-    // }
+    public String getType() {
+        return type;
+    }
 
-    // public void setType(String type) {
-    //     this.type = type;
-    // }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-    // public String getBreed() {
-    //     return breed;
-    // }
+    public String getBreed() {
+        return breed;
+    }
 
-    // public void setBreed(String breed) {
-    //     this.breed = breed;
-    // }
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
 
-    // public String getSex() {
-    //     return sex;
-    // }
+    public String getSex() {
+        return sex;
+    }
 
-    // public void setSex(String sex) {
-    //     this.sex = sex;
-    // }
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
-    // public int getWeight() {
-    //     return weight;
-    // }
+    public int getWeight() {
+        return weight;
+    }
 
-    // public void setWeight(int weight) {
-    //     this.weight = weight;
-    // }
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
 
-    // public String getColor() {
-    //     return color;
-    // }
+    public String getColor() {
+        return color;
+    }
 
-    // public void setColor(String color) {
-    //     this.color = color;
-    // }
+    public void setColor(String color) {
+        this.color = color;
+    }
 
-    // public String getDescription() {
-    //     return description;
-    // }
+    public String getDescription() {
+        return description;
+    }
 
-    // public void setDescription(String description) {
-    //     this.description = description;
-    // }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-    // public String getCoverImageUrl() {
-    //     return coverImageUrl;
-    // }
+    public String getCoverImageUrl() {
+        return coverImageUrl;
+    }
 
-    // public void setCoverImageUrl(String coverImageUrl) {
-    //     this.coverImageUrl = coverImageUrl;
-    // }
+    public void setCoverImageUrl(String coverImageUrl) {
+        this.coverImageUrl = coverImageUrl;
+    }
 
-    // public String getStatus() {
-    //     return status;
-    // }
+    public String getStatus() {
+        return status;
+    }
 
-    // public void setStatus(String status) {
-    //     this.status = status;
-    // }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
 
 }

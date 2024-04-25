@@ -28,9 +28,24 @@ public class RabbitMQConfig {
     @Value("${rabbitmq.routing.key}")
     private String routingKey;
 
-     @Value("${rabbitmq.routing.json.key}")
+    @Value("${rabbitmq.routing.json.key}")
     private String routingJsonKey;
 
+    @Bean
+    public Queue animalCreatedQueue() {
+        return new Queue("search-animal-created", false);
+    }
+
+    @Bean
+    public Queue animalUpdatedQueue() {
+        return new Queue("search-animal-updated", false);
+    }
+
+    @Bean
+    public Queue animalDeletedQueue() {
+        return new Queue("search-animal-deleted", false);
+    }
+ 
     @Bean
     public Queue queue() {
         return new Queue(queue, false);
@@ -55,20 +70,34 @@ public class RabbitMQConfig {
     }
 
     @Bean
+    public Binding bindingCreated() {
+        return BindingBuilder.bind(animalCreatedQueue()).to(exchange()).with("search-animal-created");
+    }
+
+    @Bean
+    public Binding bindingUpdated() {
+        return BindingBuilder.bind(animalUpdatedQueue()).to(exchange()).with("search-animal-updated");
+    }
+
+    @Bean
+    public Binding bindingDeleted() {
+        return BindingBuilder.bind(animalDeletedQueue()).to(exchange()).with("search-animal-deleted");
+    }
+ 
+    @Bean
     public Binding jsonBinding() {
         return BindingBuilder
                 .bind(jsonQueue())
                 .to(exchange())
                 .with(routingJsonKey);
     }
-
+     
     @Bean
     public MessageConverter jsonMessageConverter() {
         ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         return new Jackson2JsonMessageConverter(objectMapper);
     }
-
 
     @Bean
     public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {

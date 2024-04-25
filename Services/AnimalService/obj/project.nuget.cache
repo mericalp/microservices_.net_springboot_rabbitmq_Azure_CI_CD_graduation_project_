@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "11uFi1uHfbZx5GMKqzae8kQCbyTNxWgfBeA/oh8oqbl6yA5qVGqAdfHmPhHlT6KeWsAg0UBY5gZ8hbKwv8/9Ww==",
+  "dgSpecHash": "6+T77geYrPTvz1/0UD+1rKfLIZC+/k28Himcwzh4fIf2VzP8KFegEnNY6n8sT9qWpIOYjTKDsh54DeT0NPOJ1A==",
   "success": true,
-  "projectFilePath": "/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/AnimalService/AnimalService.csproj",
+  "projectFilePath": "/Users/mericalp/Documents/GitHub/microservices/Services/AnimalService/AnimalService.csproj",
   "expectedPackageFiles": [
     "/Users/mericalp/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/mericalp/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

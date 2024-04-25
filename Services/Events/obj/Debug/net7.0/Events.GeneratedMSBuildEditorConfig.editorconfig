@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Events
-build_property.ProjectDir = /Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/
+build_property.ProjectDir = /Users/mericalp/Documents/GitHub/microservices/Services/Events/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

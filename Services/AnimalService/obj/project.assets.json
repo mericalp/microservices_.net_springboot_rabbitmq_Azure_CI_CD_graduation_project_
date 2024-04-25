@@ -4064,11 +4064,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/AnimalService/AnimalService.csproj",
+      "projectUniqueName": "/Users/mericalp/Documents/GitHub/microservices/Services/AnimalService/AnimalService.csproj",
       "projectName": "AnimalService",
-      "projectPath": "/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/AnimalService/AnimalService.csproj",
+      "projectPath": "/Users/mericalp/Documents/GitHub/microservices/Services/AnimalService/AnimalService.csproj",
       "packagesPath": "/Users/mericalp/.nuget/packages/",
-      "outputPath": "/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/AnimalService/obj/",
+      "outputPath": "/Users/mericalp/Documents/GitHub/microservices/Services/AnimalService/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/mericalp/.nuget/NuGet/NuGet.Config"
@@ -4083,8 +4083,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/Events.csproj": {
-              "projectPath": "/Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/Events.csproj"
+            "/Users/mericalp/Documents/GitHub/microservices/Services/Events/Events.csproj": {
+              "projectPath": "/Users/mericalp/Documents/GitHub/microservices/Services/Events/Events.csproj"
             }
           }
         }

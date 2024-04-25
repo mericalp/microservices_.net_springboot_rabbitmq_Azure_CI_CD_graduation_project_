@@ -9,3 +9,15 @@
 /Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/obj/Debug/net7.0/refint/Events.dll
 /Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/obj/Debug/net7.0/Events.pdb
 /Users/mericalp/Downloads/rescue-us-1.blog-post/Services/Events/obj/Debug/net7.0/ref/Events.dll
+/Users/mericalp/Documents/GitHub/microservices/Services/Events/bin/Debug/net7.0/Events.deps.json
+/Users/mericalp/Documents/GitHub/microservices/Services/Events/bin/Debug/net7.0/Events.dll
+/Users/mericalp/Documents/GitHub/microservices/Services/Events/bin/Debug/net7.0/Events.pdb
+/Users/mericalp/Documents/GitHub/microservices/Services/Events/obj/Debug/net7.0/Events.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mericalp/Documents/GitHub/microservices/Services/Events/obj/Debug/net7.0/Events.AssemblyInfoInputs.cache
+/Users/mericalp/Documents/GitHub/microservices/Services/Events/obj/Debug/net7.0/Events.AssemblyInfo.cs
+/Users/mericalp/Documents/GitHub/microservices/Services/Events/obj/Debug/net7.0/Events.csproj.CoreCompileInputs.cache
+/Users/mericalp/Documents/GitHub/microservices/Services/Events/obj/Debug/net7.0/Events.sourcelink.json
+/Users/mericalp/Documents/GitHub/microservices/Services/Events/obj/Debug/net7.0/Events.dll
+/Users/mericalp/Documents/GitHub/microservices/Services/Events/obj/Debug/net7.0/refint/Events.dll
+/Users/mericalp/Documents/GitHub/microservices/Services/Events/obj/Debug/net7.0/Events.pdb
+/Users/mericalp/Documents/GitHub/microservices/Services/Events/obj/Debug/net7.0/ref/Events.dll
