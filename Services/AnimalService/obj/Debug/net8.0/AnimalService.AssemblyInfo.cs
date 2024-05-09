@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AnimalService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45fb4acfe49d422a2b9e2be8362243b185437f4c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+149c25db38aa309bb0a3ac9fa7f8903b10cd163c")]
 [assembly: System.Reflection.AssemblyProductAttribute("AnimalService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AnimalService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

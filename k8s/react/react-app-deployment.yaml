@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: react-app
-        image: mericalpp/react_app:latest  # Update the tag as needed
+        image: mericalpp/ui_animal_app:lts  # Update the tag as needed
         ports:
         - containerPort: 3000
