@@ -1,34 +1,34 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import './LeftNav.css'
 import { axiosGet } from '../../axiosServices'
 
 const LeftNav = ({ animalId }) => {
-  const [animalById, setanimalById] = useState([])
+  const [animalById, setAnimalById] = useState({})
 
-
-  const getAnimalsById = async () => {
+  // useCallback ile fonksiyonu memoize ediyoruz
+  const getAnimalsById = useCallback(async () => {
     try {
       const res = await axiosGet(`/animals/${animalId}`)
-      setanimalById(res.data)
-    }
-    catch (err) {
+      setAnimalById(res.data)
+    } catch (err) {
       console.log(err)
     }
-  }
+  }, [animalId]); // animalId değiştiğinde fonksiyon yeniden oluşturulacak
+
+  // useEffect içinde getAnimalsById fonksiyonunu çağırıyoruz
   useEffect(() => {
-    getAnimalsById()
-  }, [animalId])
+    getAnimalsById();
+  }, [getAnimalsById]); // getAnimalsById fonksiyonunu bağımlılık listesine ekliyoruz
 
   return (
     <nav className='leftNav'>
       <div className="animalsDetail">
         <h2>Full Detail</h2>
-        <img src={animalById.coverImageUrl}/>
+        <img src={animalById.coverImageUrl} alt={animalById.name || "Animal"} />
         <h1>{animalById.name} {animalById.type}</h1>
         <p>{animalById.description}</p>
         <p>{animalById.weight}</p>
         <p>{animalById.color}</p>
-        {/*<p className='date'>{animalById.description}</p>*/}
       </div>
     </nav>
   )

@@ -12,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
-        builder => builder.WithOrigins("http://localhost:3000")
+        builder => builder.WithOrigins("http://frontend--i47sddx.bluebay-1372140f.australiaeast.azurecontainerapps.io")
                           .AllowAnyHeader()
                           .AllowAnyMethod());
 });

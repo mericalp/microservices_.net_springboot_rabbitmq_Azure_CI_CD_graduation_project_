@@ -1,0 +1,24 @@
+ingress:
+  enabled: true
+  className: ""
+  annotations: 
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "http://pellerex.com"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/proxy-buffering: "on"
+    nginx.ingress.kubernetes.io/proxy-buffer-size: "128k"
+    nginx.ingress.kubernetes.io/proxy-buffers-number: "4"
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: api.pellerex.com
+      paths:
+        - path: /identity(/|$)(.*)
+          pathType: Prefix
+
+  defaultBackend:
+    service:
+  tls: 
+   - secretName: technologyleads-ecosystem-api-certificate
+     hosts:
+       - api.pellerex.com

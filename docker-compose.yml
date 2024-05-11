@@ -6,7 +6,7 @@ services:
     ports:
       - "7001:7001"
     environment:
-      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=RescueUs_Animals;User Id=SA;Password=Password123;MultipleActiveResultSets=True;TrustServerCertificate=True;
+      - ConnectionStrings__DefaultConnection=Server=msssql;Database=RescueUs_Animals;User Id=SA;Password=Password123;MultipleActiveResultSets=True;TrustServerCertificate=True;
       - Logging__LogLevel__Default=Information
       - Logging__LogLevel__Microsoft.AspNetCore=Information
       - ASPNETCORE_URLS=http://+:7001
