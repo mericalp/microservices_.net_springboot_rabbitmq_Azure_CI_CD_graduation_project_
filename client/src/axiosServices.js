@@ -4,8 +4,8 @@ import axios from 'axios';
 // // const baseURL2 = `http://localhost:8080/api`
 // const baseURL2 = `http://nginx.bluebay-1372140f.australiaeast.azurecontainerapps.io/api`
 
-const baseURL = `https://nginx.bluebay-1372140f.australiaeast.azurecontainerapps.io/api/animals`; // Search service için
-const baseURL2 = `https://nginx.bluebay-1372140f.australiaeast.azurecontainerapps.io/api/search`; // Product service için
+const baseURL = `https://nginx.bluebay-1372140f.australiaeast.azurecontainerapps.io/api`; // Search service için
+const baseURL2 = `https://nginx.bluebay-1372140f.australiaeast.azurecontainerapps.io/api`; // Product service için
 
 export const axiosGet = (url) =>{
     return axios.get(`${baseURL}${url}`, {

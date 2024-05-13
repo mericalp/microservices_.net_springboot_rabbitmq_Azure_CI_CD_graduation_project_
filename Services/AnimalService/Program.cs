@@ -43,8 +43,10 @@ builder.Services.AddMassTransit(x =>
     // Configure RabbitMQ
     x.UsingRabbitMq((context, cfg) =>
     {
-        cfg.Host(builder.Configuration["RabbitMq:Host"], "/", host =>
+        cfg.Host(builder.Configuration["RabbitMq:Host"], "vhost", host =>
         {
+            Console.WriteLine("RabbitMQ Virtual Host: " + "vhost");
+            Console.WriteLine("RabbitMQ Virtual Host: " + "guest");
             host.Username(builder.Configuration.GetValue<string>("RabbitMq:Username", "guest"));
             host.Password(builder.Configuration.GetValue<string>("RabbitMq:Password", "guest"));
         });

@@ -25,7 +25,7 @@ COPY --from=build-env /app/AnimalService/out /app
 
 
 ENV ASPNETCORE_URLS=http://+:7001 \
-    ConnectionStrings__DefaultConnection="Server=msssql;Initial Catalog=RescueUs_Animals;Persist Security Info=False;User ID=SA;Password=Password123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True" \
+    ConnectionStrings__DefaultConnection= \
     Logging__LogLevel__Default=Information \
     Logging__LogLevel__Microsoft.AspNetCore=Information
 
