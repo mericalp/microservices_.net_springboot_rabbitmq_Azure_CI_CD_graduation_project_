@@ -22,29 +22,32 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'dockerhub_mericalpp', passwordVariable: 'DOCKER_HUB_PASSWORD', usernameVariable: 'DOCKER_HUB_USERNAME')]) {
                         sh "echo $DOCKER_HUB_PASSWORD | docker login --username $DOCKER_HUB_USERNAME --password-stdin"
-                        sh "docker push ${DOCKER_IMAGE}:${env.BUILD_NUMBER}"
+                        sh "docker push ${DOCKER_IMAGE}:lts"
                     }
                 }
             }
         }
-        stage('Update Kubernetes Deployment') {
-            steps {
-                dir("${K8S_DIR}") {
-                    script {
-                        sh "kubectl --kubeconfig=${KUBE_CONFIG} set image deployment/animal-service animal-service=${DOCKER_IMAGE}:${env.BUILD_NUMBER}"
-                        sh "kubectl --kubeconfig=${KUBE_CONFIG} apply -f ."
-                    }
-                }
-            }
-        }
+   
     }
 
      
     post {
         always {
             script {
-                sh "docker rmi ${DOCKER_IMAGE}:${env.BUILD_NUMBER}" 
+                sh "docker rmi ${DOCKER_IMAGE}:lts" 
             }
         }
     }
 }
+
+
+     // stage('Update Kubernetes Deployment') {
+        //     steps {
+        //         dir("${K8S_DIR}") {
+        //             script {
+        //                 sh "kubectl --kubeconfig=${KUBE_CONFIG} set image deployment/animal-service animal-service=${DOCKER_IMAGE}:${env.BUILD_NUMBER}"
+        //                 sh "kubectl --kubeconfig=${KUBE_CONFIG} apply -f ."
+        //             }
+        //         }
+        //     }
+        // }
