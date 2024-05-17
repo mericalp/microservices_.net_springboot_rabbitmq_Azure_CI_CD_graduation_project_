@@ -1,12 +1,12 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = 'mericalpp/animal_service'
+        DOCKER_IMAGE = 'mericalpp/ui_animal_app'
         DOCKER_CREDENTIALS_ID = 'dockerhub_mericalpp'
-        DIRECTORY = 'Services'
+        DIRECTORY = 'client'
         DOCKER_TAG = 'lts'
         KUBE_CONFIG = '/root/.kube/config'
-        K8S_DIR = 'k8s/animal_service' // Kubernetes files directory
+        // K8S_DIR = 'k8s/animal_service' // Kubernetes files directory
     }
     stages {
       
