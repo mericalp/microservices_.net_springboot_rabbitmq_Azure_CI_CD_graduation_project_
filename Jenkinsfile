@@ -7,7 +7,6 @@ pipeline {
         DOCKER_TAG = 'jenkinspush_demo'
         KUBE_CONFIG = '/root/.kube/config'
         TF_LOG = 'DEBUG'
-        AZURE_STORAGE_ACCOUNT_KEY = 'l94+wtaq/LbFBpKoI/MqgGMEW7zEDLB8clI/6P05RyLxBVWsm1tGwoPJvIYBZou3bEBX86oSAaVL+AStRkanDA=='
     }
 
     stages {
@@ -26,7 +25,7 @@ pipeline {
             steps {
                 dir('terraform') {
                     script {
-                        sh 'terraform init -backend-config="access_key=${AZURE_STORAGE_ACCOUNT_KEY}"'
+                        sh 'terraform init'
                     }
                 }
             }
@@ -36,7 +35,7 @@ pipeline {
             steps {
                 dir('terraform') {
                     script {
-                        sh 'terraform plan -var="access_key=${AZURE_STORAGE_ACCOUNT_KEY}"'
+                        sh 'terraform plan 
                     }
                 }
             }
