@@ -6,7 +6,6 @@ pipeline {
         DIRECTORY = 'client'
         DOCKER_TAG = 'jenkinspush_demo'
         KUBE_CONFIG = '/root/.kube/config'
-        // TF_VAR_storage_account_access_key değişkenini withCredentials içinde tanımlayacağız
     }
 
     stages {
@@ -27,8 +26,8 @@ pipeline {
             steps {
                 dir('terraform') {
                     script {
-                        withCredentials([string(credentialsId: 'my_credentials_for_azure', variable: 'TF_VAR_storage_account_access_key')]) {
-                            sh 'terraform init'
+                        withCredentials([string(credentialsId: 'my_credentials_for_azure', variable: 'AZURE_STORAGE_ACCOUNT_KEY')]) {
+                            sh 'terraform init -backend-config="access_key=${AZURE_STORAGE_ACCOUNT_KEY}"'
                         }
                     }
                 }
@@ -39,8 +38,8 @@ pipeline {
             steps {
                 dir('terraform') {
                     script {
-                        withCredentials([string(credentialsId: 'my_credentials_for_azure', variable: 'TF_VAR_storage_account_access_key')]) {
-                            sh 'terraform plan'
+                        withCredentials([string(credentialsId: 'my_credentials_for_azure', variable: 'AZURE_STORAGE_ACCOUNT_KEY')]) {
+                            sh 'terraform plan -var="access_key=${AZURE_STORAGE_ACCOUNT_KEY}"'
                         }
                     }
                 }
@@ -51,8 +50,8 @@ pipeline {
         //     steps {
         //         dir('terraform') {
         //             script {
-        //                 withCredentials([string(credentialsId: 'my_credentials_for_azure', variable: 'TF_VAR_storage_account_access_key')]) {
-        //                     sh 'terraform apply -auto-approve'
+        //                 withCredentials([string(credentialsId: 'my_credentials_for_azure', variable: 'AZURE_STORAGE_ACCOUNT_KEY')]) {
+        //                     sh 'terraform apply -auto-approve -var="access_key=${AZURE_STORAGE_ACCOUNT_KEY}"'
         //                 }
         //             }
         //         }

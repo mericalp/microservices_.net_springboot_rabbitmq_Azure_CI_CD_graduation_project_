@@ -1,5 +1,3 @@
-
-
 provider "azurerm" {
   features {}
 }
@@ -9,7 +7,7 @@ terraform {
     storage_account_name = "your_storage_account_name"
     container_name       = "your_container_name"
     key                  = "terraform.tfstate"
-    access_key           = var.storage_account_access_key
+    access_key           = "PLACEHOLDER" # Bu kısmı pipeline'da environment değişkeni ile sağlayacağız
   }
 }
 
