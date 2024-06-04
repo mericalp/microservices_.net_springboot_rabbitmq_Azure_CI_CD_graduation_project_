@@ -10,16 +10,25 @@ pipeline {
     }
 
     stages {
-        // stage('Push Docker Image') {
-        //     steps {
-        //         dir("${DIRECTORY}") {
-        //             script {
-        //                 sh "docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD"
-        //                 sh "docker buildx build --platform linux/amd64 -t ${DOCKER_IMAGE}:${DOCKER_TAG} . --push"
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Push Docker Login') {
+            steps {
+                dir("${DIRECTORY}") {
+                    script {
+                        sh "docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD"
+                    }
+                }
+            }
+        }
+        
+        stage('Push Docker Build and Push') {
+            steps {
+                dir("${DIRECTORY}") {
+                    script {
+                        sh "docker buildx build --platform linux/amd64 -t ${DOCKER_IMAGE}:${DOCKER_TAG} . --push"
+                    }
+                }
+            }
+        }
 
         stage('Terraform Init') {
             steps {
@@ -31,25 +40,7 @@ pipeline {
             }
         }
 
-        stage('Terraform Plan') {
-            steps {
-                dir('terraform') {
-                    script {
-                        sh 'terraform plan'
-                    }
-                }
-            }
-        }
-
-        // stage('Terraform Apply') {
-        //     steps {
-        //         dir('terraform') {
-        //             script {
-        //                 sh 'terraform apply -auto-approve -var="access_key=${AZURE_STORAGE_ACCOUNT_KEY}"'
-        //             }
-        //         }
-        //     }
-        // }
+         
     }
 
     post {
