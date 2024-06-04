@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_IMAGE = 'mericalpp/ui_animal_app'
-        DOCKER_CREDENTIALS_ID = 'dockerhub_mericalpp'
+        DOCKER_CREDENTIALS_ID = 'dockerhub_mericalpp2'
         DIRECTORY = 'client'
         DOCKER_TAG = 'jenkinspush_demo'
         KUBE_CONFIG = '/root/.kube/config'
