@@ -10,12 +10,25 @@ pipeline {
     }
 
     stages {
-        stage('Docker Login, Docker Build and Push Docker Image') {
+        stage('Docker Login') {
             steps {
                 dir("${DIRECTORY}") {
                     script {
-                        sh "docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD"
-                        sh "docker buildx build --platform linux/amd64 -t ${DOCKER_IMAGE}:${DOCKER_TAG} . --push"
+                        withCredentials([usernamePassword(credentialsId: "${DOCKER_CREDENTIALS_ID}", passwordVariable: 'DOCKER_HUB_PASSWORD', usernameVariable: 'DOCKER_HUB_USERNAME')]) {
+                            sh "docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD"
+                           
+                        }
+                    }
+                }
+            }
+        }
+
+             
+        stage('Build and Push Docker Image') {
+            steps {
+               dir("${DIRECTORY}") {
+                    script {
+                          sh "docker buildx build --platform linux/amd64 -t ${DOCKER_IMAGE}:${DOCKER_TAG} . --push"
                     }
                 }
             }
