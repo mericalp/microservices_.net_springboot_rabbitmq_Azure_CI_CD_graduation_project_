@@ -6,6 +6,7 @@ pipeline {
         DIRECTORY = 'client'
         DOCKER_TAG = 'jenkinspush_demo'
         KUBE_CONFIG = '/root/.kube/config'
+        TF_LOG = 'DEBUG'
     }
 
     stages {
