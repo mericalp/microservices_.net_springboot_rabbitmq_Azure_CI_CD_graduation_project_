@@ -7,7 +7,7 @@ pipeline {
         DOCKER_TAG = 'jenkinspush_demo'
         KUBE_CONFIG = '/root/.kube/config'
         TF_LOG = 'DEBUG'
-        AZURE_STORAGE_ACCOUNT_KEY = 'x'
+        AZURE_STORAGE_ACCOUNT_KEY = 'l94+wtaq/LbFBpKoI/MqgGMEW7zEDLB8clI/6P05RyLxBVWsm1tGwoPJvIYBZou3bEBX86oSAaVL+AStRkanDA=='
     }
 
     stages {
