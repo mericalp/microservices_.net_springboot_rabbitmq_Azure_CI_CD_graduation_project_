@@ -10,20 +10,11 @@ pipeline {
     }
 
     stages {
-        stage('Push Docker Login') {
+        stage('Push Docker Image') {
             steps {
                 dir("${DIRECTORY}") {
                     script {
                         sh "docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD"
-                    }
-                }
-            }
-        }
-        
-        stage('Push Docker Build and Push') {
-            steps {
-                dir("${DIRECTORY}") {
-                    script {
                         sh "docker buildx build --platform linux/amd64 -t ${DOCKER_IMAGE}:${DOCKER_TAG} . --push"
                     }
                 }
