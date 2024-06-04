@@ -4,10 +4,9 @@ provider "azurerm" {
 
 terraform {
   backend "azurerm" {
-    storage_account_name = "your_storage_account_name"
-    container_name       = "your_container_name"
+    storage_account_name = "demo123123213"
+    container_name       = "demooo"
     key                  = "terraform.tfstate"
-    access_key           = "PLACEHOLDER" # Bu kısmı pipeline'da environment değişkeni ile sağlayacağız
   }
 }
 

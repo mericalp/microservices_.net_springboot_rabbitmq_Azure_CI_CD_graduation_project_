@@ -7,6 +7,7 @@ pipeline {
         DOCKER_TAG = 'jenkinspush_demo'
         KUBE_CONFIG = '/root/.kube/config'
         TF_LOG = 'DEBUG'
+        AZURE_STORAGE_ACCOUNT_KEY = 'x'
     }
 
     stages {
@@ -14,10 +15,8 @@ pipeline {
         //     steps {
         //         dir("${DIRECTORY}") {
         //             script {
-        //                 withCredentials([usernamePassword(credentialsId: "${DOCKER_CREDENTIALS_ID}", passwordVariable: 'DOCKER_HUB_PASSWORD', usernameVariable: 'DOCKER_HUB_USERNAME')]) {
-        //                     sh "docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD"
-        //                     sh "docker buildx build --platform linux/amd64 -t ${DOCKER_IMAGE}:${DOCKER_TAG} . --push"
-        //                 }
+        //                 sh "docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD"
+        //                 sh "docker buildx build --platform linux/amd64 -t ${DOCKER_IMAGE}:${DOCKER_TAG} . --push"
         //             }
         //         }
         //     }
@@ -27,9 +26,7 @@ pipeline {
             steps {
                 dir('terraform') {
                     script {
-                        withCredentials([string(credentialsId: 'my_credentials_for_azure', variable: 'AZURE_STORAGE_ACCOUNT_KEY')]) {
-                            sh 'terraform init -backend-config="access_key=${AZURE_STORAGE_ACCOUNT_KEY}"'
-                        }
+                        sh 'terraform init -backend-config="access_key=${AZURE_STORAGE_ACCOUNT_KEY}"'
                     }
                 }
             }
@@ -39,9 +36,7 @@ pipeline {
             steps {
                 dir('terraform') {
                     script {
-                        withCredentials([string(credentialsId: 'my_credentials_for_azure', variable: 'AZURE_STORAGE_ACCOUNT_KEY')]) {
-                            sh 'terraform plan -var="access_key=${AZURE_STORAGE_ACCOUNT_KEY}"'
-                        }
+                        sh 'terraform plan -var="access_key=${AZURE_STORAGE_ACCOUNT_KEY}"'
                     }
                 }
             }
@@ -51,9 +46,7 @@ pipeline {
         //     steps {
         //         dir('terraform') {
         //             script {
-        //                 withCredentials([string(credentialsId: 'my_credentials_for_azure', variable: 'AZURE_STORAGE_ACCOUNT_KEY')]) {
-        //                     sh 'terraform apply -auto-approve -var="access_key=${AZURE_STORAGE_ACCOUNT_KEY}"'
-        //                 }
+        //                 sh 'terraform apply -auto-approve -var="access_key=${AZURE_STORAGE_ACCOUNT_KEY}"'
         //             }
         //         }
         //     }
