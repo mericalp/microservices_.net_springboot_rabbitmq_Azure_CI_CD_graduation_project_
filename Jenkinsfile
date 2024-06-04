@@ -10,7 +10,7 @@ pipeline {
     }
 
     stages {
-        stage('Push Docker Image') {
+        stage('Docker Login, Docker Build and Push Docker Image') {
             steps {
                 dir("${DIRECTORY}") {
                     script {
