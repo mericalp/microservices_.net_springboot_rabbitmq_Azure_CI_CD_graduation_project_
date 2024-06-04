@@ -35,7 +35,7 @@ pipeline {
             steps {
                 dir('terraform') {
                     script {
-                        sh 'terraform plan 
+                        sh 'terraform plan'
                     }
                 }
             }
